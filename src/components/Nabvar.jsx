@@ -11,21 +11,18 @@ const Nabvar = ({setSearch, search}) => {
 
     return (  
         <>
-            <nav class="navbar bg-body-tertiary p-5 pt-4">
-                <div class="container-fluid">
-                    <a href='index.html' class="navbar-brand">
-                        <h2>
+            <nav className="navbar bg-body-tertiary p-5 pt-4">
+                <div className="container-fluid">
+                    <a href='index.html' className="navbar-brand">
+                        <h2 className='d-inline-flex gap-3'>
                             All-Time Videogames
+                            <i className="bi bi-controller" style={{'fontSize' : '1.25em'}}></i>
                         </h2>
                     </a>
-                    <div class="d-flex">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">
-                                <i className='bi bi-search'></i>
-                            </span>
-                        
+                    <div className="d-flex">
+                        <div className="input-group mb-3">
                             <input 
-                                class="form-control me-2" 
+                                className="form-control" 
                                 type="search" 
                                 placeholder="Search" 
                                 name = "search" 
@@ -33,6 +30,10 @@ const Nabvar = ({setSearch, search}) => {
                                 value = {search}
                                 onChange = {onChange} 
                             />
+                            
+                            <span className="input-group-text" id="basic-addon1">
+                                <i className='bi bi-search'></i>
+                            </span>
                         </div>
                     </div>
                 </div>

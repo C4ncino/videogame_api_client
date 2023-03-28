@@ -1,26 +1,26 @@
 import React from 'react';
 
-const Card = ({videogame}) => {
+const Card = ({videogame, setMain}) => {
     return (  
         <>
-            <div className='container-sm m-0 p-0 border border-3 border-primary-subtle rounded' style={{"maxWidth" : "300px"}}>
-                <div className='row'>
-                    <div className='col'>
-                        <img src={videogame.image} alt="IMG" />
+            <div className='container m-0 p-0' style={{'maxWidth' : '400px', 'maxHeight' : '200px'}}>
+                <button className='btn h-100 w-100' onClick={()=>{setMain(false)}}>
+                    <div className='row shadow-lg border border-dark border-3 border-opacity-25 rounded m-0 p-0 h-100 w-100'>
+                        <div className='col-4 p-0 m-0 h-100'>
+                            <div className='container p-0 m-0 w-100 h-100'>
+                                <img src={videogame.image} alt='IMG' className='object-fit-cover w-100 h-100 rounded-start-1'/>
+                            </div>
+                        </div>
+                        <div className='col-8 text-start p-1 h-100 border-start border-dark border-2 border-opacity-50'>
+                            <div className='row h-100 w-100 m-0 p-0'>
+                                <h3 className='col-auto p-0 m-0'>{videogame.title}</h3>
+                                {/* <h5 className='col-auto p-0 m-0'>{videogame.developer}</h5>
+                                <h6 className='col-auto p-0 m-0'>{videogame.release_year} - {videogame.clasification}</h6> */}
+                                <p className='col-auto p-0 m-0 text-wrap'>{videogame.description}</p>
+                            </div>
+                        </div>
                     </div>
-                    <div className='col text-start p-3'>
-                        <h2 className='p-0 m-0'>{videogame.title}</h2>
-                        <h5 className='p-0 m-0'>{videogame.developer}</h5>
-                        <h6 className='p-0 m-0'>{videogame.release_year} - {videogame.classification}</h6>
-                        <p className='p-0 m-0'>{videogame.description}</p>
-                    </div>
-                </div>
-                <div className='row'>
-                    <div className='d-flex justify-content-end gap-2'>
-                        <button className='btn btn-outline-primary'><i></i></button>
-                        <button className='btn btn-outline-primary'><i></i></button>
-                    </div>
-                </div>
+                </button>
             </div>
         </>
     );

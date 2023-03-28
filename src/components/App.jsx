@@ -3,51 +3,45 @@ import axios from 'axios';
 import Cards from './Cards';
 import Nabvar from './Nabvar';
 import a from './a.json';
+import Buttons from './Buttons';
 
 const App = () => {
     const [videogames, setVideogames] = useState(a);
     const [search, setSearch] = useState("");
-    const [page, setPage] = useState(1);
-    const [pages, setPages] = useState(5);
+    const [pages, setPages] = useState(0);
+    const [page, setPage] = useState(0);
+    const [main, setMain] = useState(true);
 
-    const url = "https://videogame-api-kouw.onrender.com/api/videogames/";
-    
+    const url = "https://videogame-api-kouw.onrender.com/api/videogames/" + search;
+
     useEffect(() => {
-        axios.get(url).then((response) => {
+        // axios.get(url).then((response) => {
+        //     setVideogames(response.data);
+        // });
+        
+        setVideogames(a);
 
-            console.log(response);
-            // setCharacters (response.data.results);
-        });
-        // console.log(page);
-    });
+        setPages(parseInt(videogames.length / 18) - 1);
+    }, [url, videogames.length]);
 
     return (
         <>
-        <Nabvar setSearch={setSearch} search={search}/>
-        <div className='container p-0 ms-25% me-25% text-center'>
-            
-            <div className='container'>
-                <Cards videogames={videogames}/>
-            </div>
+            <Nabvar setSearch={setSearch} search={search}/>
 
-            <div className='pt-4 d-flex gap-3 justify-content-center'>
-                    {page > 1 ? (
-                        <button id='bacwards' onClick={()=>{setPage(page - 1)}} className='btn btn-outline-primary'>
-                            Prev
-                        </button>
-                    ):(
-                        <></>
-                        )}
+            {main ? (
+                <div className='container p-0 ms-25% me-25% text-center'>
+                    
+                    <div className='container'>
+                        <Cards videogames={videogames.slice(18 * (page), (page + 1) * 18)} setMain={setMain}/>
+                    </div>
 
-                    {page < pages ? (
-                        <button id='fowards' onClick={()=>{setPage(page + 1)}} className='btn btn-outline-primary'>
-                            Next
-                        </button>
-                    ):(
-                        <></>
-                    )}
-            </div>
-        </div>
+                    <div className='pt-4 d-flex gap-3 justify-content-center'>
+                        <Buttons pages={pages} page={page} setPage={setPage}/>
+                    </div>
+                </div>
+            ):(
+                <button onClick={()=>{setMain(true)}}></button>
+            )}
         </>
     );
 }
