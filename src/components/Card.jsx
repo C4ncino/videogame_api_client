@@ -11,7 +11,7 @@ const Card = ({videogame, setMain, setVideogame, i, setIndexP}) => {
     return (  
         <>
             <div className='m-0 p-0' style={{'width' : '250px', 'height' : '350px'}}>
-                <button className='btn-container btn h-100 w-100 border border-light border-2 border-opacity-25 rounded p-0 m-0' onClick={onClick}>
+                <button className='btn-container shadow btn h-100 w-100 border border-light border-2 border-opacity-50 rounded p-0 m-0' onClick={onClick}>
                     <div className='d-flex flex-column justify-content-start w-100 h-100'>
                         <div className='img-container p-0 m-0 h-100 w-100'>
                             <img src={videogame.image} alt='IMG' className='game-img object-fit-cover w-100 h-100'/>
