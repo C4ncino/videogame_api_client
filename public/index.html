@@ -37,6 +37,33 @@
       .btn-container:hover .game-img{
         border-radius: 0.32em;
       }
+      .main-container{
+        padding: 0;
+        padding-top: 120px !important;
+      }
+    </style>
+    <style>
+      .my-grid{
+        display: grid;
+        grid-template-rows: 200px auto;
+        grid-template-columns: auto;
+      }
+      .banner{
+        grid-area: 1 / 1 / 3 / 2;
+      }
+      .things{
+        grid-area: 2 / 1 / 3 / 2;
+      }
+      .mini-img{
+        max-width: 100px;
+        transition: all 0.2s;
+      }
+      .mini-title h6{
+        margin: 0;
+      }
+      .mini-btn:hover .mini-img{
+        max-width: 100%;
+      }
     </style>
 
   </head>

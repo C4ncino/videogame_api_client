@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import Card from './Card';
 
-const Cards = ({videogames, setMain}) => {
+const Cards = ({videogames, setMain, setVideogame, setIndexP}) => {
 
     useEffect(() => {
     }, [videogames]);
@@ -9,8 +9,8 @@ const Cards = ({videogames, setMain}) => {
     return (  
         <>
             <div className='d-flex justify-content-evenly gap-3 flex-wrap'>
-                {videogames.map( (videogame) => 
-                    <Card key = {videogame.id} videogame = {videogame} setMain={setMain}/>
+                {videogames.map( (videogame, i) => 
+                    <Card key = {videogame.id} videogame = {videogame} setMain={setMain} setVideogame={setVideogame} i={i} setIndexP={setIndexP}/>
                 )}
             </div>
         </>

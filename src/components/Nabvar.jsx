@@ -11,16 +11,16 @@ const Nabvar = ({setSearch, search}) => {
 
     return (  
         <>
-            <nav className="navbar bg-body-tertiary p-5 pt-4 pb-3">
+            <nav className="navbar p-5 pt-4 pb-3 position-fixed top-0 w-100">
                 <div className="container-fluid">
                     <a href='index.html' className="navbar-brand">
-                        <h2 className='d-inline-flex gap-3'>
+                        <h2 className='d-inline-flex gap-3 text-light'>
                             All-Time Videogames
                             <i className="bi bi-controller" style={{'fontSize' : '1.25em'}}></i>
                         </h2>
                     </a>
                     <div className="d-flex">
-                        <div className="input-group mb-3">
+                        <div className="input-group mb-3 input-dark">
                             <input 
                                 className="form-control" 
                                 type="search" 
