@@ -63,7 +63,7 @@ const App = () => {
                         <div className='d-flex w-100 h-100 flex-column overflow-hidden'>
                             <div className='my-grid'>
                                 <div className='banner' style={{'height': '750px', 'width' : '100%'}}>
-                                    <img src='images/wallpaper.jpg' alt='IMG' className='object-fit-cover w-100 h-100'/>
+                                    <img src={videogame.banner} alt='IMG' className='object-fit-cover w-100 h-100'/>
                                 </div>
                                 <div className='things row p-4 bg-dark bg-gradient bg-opacity-75' style={{'maxHeight' : '600px'}}>
                                     <div className='col-4 d-flex justify-content-center h-100'>

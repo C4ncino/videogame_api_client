@@ -5,9 +5,6 @@ const MiniCard = ({videogame, setVideogame, i, setIndexP}) => {
     const onClick = () => {
         setVideogame(videogame);
         setIndexP(i);
-        console.log("DSAD");
-        console.log(videogame);
-        console.log(i);
     }
     
     return (  
