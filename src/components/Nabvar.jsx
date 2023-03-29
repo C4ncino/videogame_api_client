@@ -11,7 +11,7 @@ const Nabvar = ({setSearch, search}) => {
 
     return (  
         <>
-            <nav className="navbar bg-body-tertiary p-5 pt-4">
+            <nav className="navbar bg-body-tertiary p-5 pt-4 pb-3">
                 <div className="container-fluid">
                     <a href='index.html' className="navbar-brand">
                         <h2 className='d-inline-flex gap-3'>

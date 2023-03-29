@@ -13,6 +13,32 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
     <title>Video Games</title>
+    
+    <style>
+      .img-container {
+        max-height: 100px;
+        transition: all 0.2s;
+      }
+      .game-title{
+        height: 130px;
+      }
+      .game-title h3{
+        margin: 0;
+      }
+      .game-img{
+        border-radius: 0.32em 0.32em 0 0;
+      }
+      .btn-container:hover .img-container{
+        max-height: 100%;
+      }
+      .btn-container:hover .text-container{
+        display: none;
+      }
+      .btn-container:hover .game-img{
+        border-radius: 0.32em;
+      }
+    </style>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

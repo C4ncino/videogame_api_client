@@ -2,26 +2,33 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Cards from './Cards';
 import Nabvar from './Nabvar';
-import a from './a.json';
+// import a from './a.json';
 import Buttons from './Buttons';
 
 const App = () => {
-    const [videogames, setVideogames] = useState(a);
+    const [videogames, setVideogames] = useState([]);
     const [search, setSearch] = useState("");
     const [pages, setPages] = useState(0);
     const [page, setPage] = useState(0);
     const [main, setMain] = useState(true);
+    const games_per_page = 20;
 
     const url = "https://videogame-api-kouw.onrender.com/api/videogames/" + search;
 
     useEffect(() => {
-        // axios.get(url).then((response) => {
-        //     setVideogames(response.data);
-        // });
+        axios.get(url).then((response) => {
+            setVideogames(response.data);
+            console.log(response);
+        });
         
-        setVideogames(a);
+        // setVideogames(a);
 
-        setPages(parseInt(videogames.length / 18) - 1);
+        if ((parseInt(videogames.length / games_per_page)) >= (videogames.length / games_per_page)) {
+            setPages((parseInt(videogames.length / games_per_page) - 1));
+        }
+        else {
+            setPages(parseInt(videogames.length / games_per_page));
+        }
     }, [url, videogames.length]);
 
     return (
@@ -32,10 +39,10 @@ const App = () => {
                 <div className='container p-0 ms-25% me-25% text-center'>
                     
                     <div className='container'>
-                        <Cards videogames={videogames.slice(18 * (page), (page + 1) * 18)} setMain={setMain}/>
+                        <Cards videogames={videogames.slice(games_per_page * (page), (page + 1) * games_per_page)} setMain={setMain}/>
                     </div>
 
-                    <div className='pt-4 d-flex gap-3 justify-content-center'>
+                    <div className='py-5 d-flex gap-3 justify-content-center'>
                         <Buttons pages={pages} page={page} setPage={setPage}/>
                     </div>
                 </div>
