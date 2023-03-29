@@ -13,7 +13,7 @@ const BigCard = ({videogame, setMain, setVideogame}) => {
                 </div>
 
                 <h2 className='my-2'>{videogame.developer} - {videogame.release_year}</h2>
-
+                <h3 className='my-2'>Clasification: {videogame.clasification}</h3>
                 <p className='pe-5'>{videogame.description}</p>
 
             </div>
